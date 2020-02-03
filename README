@@ -1,0 +1,35 @@
+# Simple API to return tennis player stats
+
+Available endpoints :
+
+- GET /players
+- GET /players/[ID]
+
+## Quick start
+
+First clone the project and install dependencies :
+
+```
+$ git clone XXXX
+$ cd endr
+$ npm install
+```
+
+Since this project use modern JavaScript, it should be built with babel, then executed with npm start
+
+```
+$ npm run build
+$ npm start
+```
+
+...or be executed directly with babel-node thanks to the following command :
+
+```
+$ npm run dev
+```
+
+## How to run tests
+
+```
+npm test
+```

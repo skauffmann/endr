@@ -1,0 +1,28 @@
+{
+  "name": "endr",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A simple API to return tennis player stats",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel-node src/index.js",
+    "test": "jest",
+    "build": "babel src -d dist",
+    "start": "node dist"
+  },
+  "author": "Samuel Kauffmann <skauffmann@tyneo.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "express": "^4.17.1"
+  }
+}
