@@ -16,7 +16,7 @@ async function fetchHeadtohead() {
  */
 export async function getPlayers() {
   const headtohead = await fetchHeadtohead()
-  return headtohead.players
+  return [...headtohead.players].sort((a, b) => a.id - b.id)
 }
 
 /**
