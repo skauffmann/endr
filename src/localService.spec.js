@@ -5,28 +5,6 @@ import headtohead from '../headtohead.json'
 jest.mock('../headtohead.json', () => ({
   players: [
     {
-      id: 24,
-      firstname: 'Jo-Wilfried',
-      lastname: 'Tsonga',
-      shortname: 'J.TSO',
-      sex: 'M',
-      country: {
-        picture:
-          'https://i.eurosport.com/_iss_/geo/country/flag/medium/2202.png',
-        code: 'FRA',
-      },
-      picture:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jo-Wilfried_Tsonga_Doha.jpg/220px-Jo-Wilfried_Tsonga_Doha.jpg',
-      data: {
-        rank: 33,
-        points: 1305,
-        weight: 91000,
-        height: 188,
-        age: 34,
-        last: [1, 1, 1, 1, 1],
-      },
-    },
-    {
       id: 25,
       firstname: 'Richard',
       lastname: 'Gasquet',
@@ -48,6 +26,28 @@ jest.mock('../headtohead.json', () => ({
         last: [1, 1, 1, 1, 1],
       },
     },
+    {
+      id: 24,
+      firstname: 'Jo-Wilfried',
+      lastname: 'Tsonga',
+      shortname: 'J.TSO',
+      sex: 'M',
+      country: {
+        picture:
+          'https://i.eurosport.com/_iss_/geo/country/flag/medium/2202.png',
+        code: 'FRA',
+      },
+      picture:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jo-Wilfried_Tsonga_Doha.jpg/220px-Jo-Wilfried_Tsonga_Doha.jpg',
+      data: {
+        rank: 33,
+        points: 1305,
+        weight: 91000,
+        height: 188,
+        age: 34,
+        last: [1, 1, 1, 1, 1],
+      },
+    },
   ],
 }))
 
@@ -57,7 +57,10 @@ describe('LocalService', () => {
       const players = getPlayers()
       expect(Array.isArray(players)).toBe(true)
       expect(players.length).toBe(2)
-      expect(players).toEqual(headtohead.players)
+    })
+    test('should return players sorted by id', () => {
+      const players = getPlayers()
+      expect(players[0]).toEqual(headtohead.players[1])
     })
   })
 
@@ -65,7 +68,7 @@ describe('LocalService', () => {
     test('should return a Player from its ID', () => {
       const player = getPlayer(24)
       expect(player).toBeTruthy()
-      expect(player).toEqual(headtohead.players[0])
+      expect(player).toEqual(headtohead.players[1])
     })
     test('should return null if no player is matching with the given ID', () => {
       const player = getPlayer(99)
