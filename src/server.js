@@ -9,7 +9,7 @@ app.get('/players', function(req, res) {
   res.status(200).json(getPlayers())
 })
 
-// End point to retreive one tennis player stats from its ID
+// End point to retrieve the stats of a tennis player from his ID
 app.get('/players/:id', function(req, res) {
   const playerId = Number(req.params.id)
   const player = getPlayer(playerId)

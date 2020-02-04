@@ -5,12 +5,14 @@ Available endpoints :
 - GET /players
 - GET /players/[ID]
 
+Switch to the [master branch](https://github.com/skauffmann/endr/) to browse the result of tasks 1 to 4.
+
 ## Quick start
 
 First clone the project and install dependencies :
 
 ```
-$ git clone XXXX
+$ git clone https://github.com/skauffmann/endr.git
 $ cd endr
 $ npm install
 ```

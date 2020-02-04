@@ -8,6 +8,7 @@ describe('Server', () => {
     test('should call localService.getPlayers', async () => {
       service.getPlayers.mockReturnValueOnce([{ id: 24, lastname: 'Tsonga' }])
       const response = await request(server).get('/players')
+      expect(service.getPlayers).toHaveBeenCalledTimes(1)
       expect(response.statusCode).toBe(200)
       expect(response.body).toEqual([{ id: 24, lastname: 'Tsonga' }])
     })
@@ -17,6 +18,8 @@ describe('Server', () => {
     test('should return a Player from its ID', async () => {
       service.getPlayer.mockReturnValueOnce({ id: 24, lastname: 'Tsonga' })
       const response = await request(server).get('/players/24')
+      expect(service.getPlayer).toHaveBeenCalledTimes(1)
+      expect(service.getPlayer).toHaveBeenCalledWith(24)
       expect(response.statusCode).toBe(200)
       expect(response.body).toEqual({ id: 24, lastname: 'Tsonga' })
     })
